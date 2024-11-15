@@ -1,0 +1,30 @@
+{
+    "version": 1,
+    "author": "Diya s",
+    "editor": "wokwi",
+    "parts": [
+      {
+        "type": "wokwi-esp32-devkit-v1",
+        "id": "esp",
+        "top": 0,
+        "left": 0,
+        "attrs": { "env": "micropython-20220618-v1.19.1" }
+      },
+      {
+        "type": "wokwi-hc-sr04",
+        "id": "ultrasonic1",
+        "top": -84.9,
+        "left": -186.5,
+        "attrs": { "distance": "2" }
+      }
+    ],
+    "connections": [
+      [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+      [ "ultrasonic1:VCC", "esp:VIN", "red", [ "v0" ] ],
+      [ "ultrasonic1:GND", "esp:GND.2", "black", [ "v0" ] ],
+      [ "ultrasonic1:TRIG", "esp:D5", "orange", [ "v205.27", "h232.43", "v-124.67" ] ],
+      [ "ultrasonic1:ECHO", "esp:D18", "green", [ "v231.93", "h243.77", "v-160.67" ] ]
+    ],
+    "dependencies": {}
+  }
